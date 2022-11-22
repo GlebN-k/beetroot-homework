@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>р</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <h2>Registration</h2>
+        <form class="form-registration" action="#" method="post">
+            <div class="form-item">
+                <label for="name">First name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-item">
+                <label for="last-name">Last name</label>
+                <input type="text" name="last-name" id="last-name" required>
+            </div>
+            <div class="form-item">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-item">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-item">
+                <label for="repeat-password">Repeat password</label>
+                <input type="password" name="repeat-password" id="repeat-password" required>
+            </div>
+
+            <div class="gender">
+                <p>Your gender</p>
+                <div>
+                    <label for="male">
+                        <input class="radio-btn" type="radio" name="gender" id="male" value="male" checked>Male
+                    </label>
+
+                    <label for="female">
+                        <input class="radio-btn" type="radio" name="gender" id="female" value="female">Female</label>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="age">Age</label>
+                <input type="number" id="age" required>
+            </div>
+
+            <div class="form-item">
+                <label for="course">Course</label>
+                <select name="course" id="course" required>
+                    <option value="choose-course">choose your course</option>
+                    <option value="Front-End">Front-End</option>
+                    <option value="Back-End">Back-End</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="QA Manual">QA Manual</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label class="address" for="full-address">Full address</label>
+                <textarea name="full-address" id="full-address" cols="20" rows="5"
+                    placeholder="Country, region, city, street, appartment number" required></textarea>
+            </div>
+
+            <div class="form-item">
+                <input class="input-check" type="checkbox" id="consent-personal-data" required>
+                <p>I agree to have my personal data processed</p>
+            </div>
+
+            <button class="continue-btn">Continue</button>
+            <p class="terms-of-use">By clicking Continue you accept our Terms of Use and
+                acknowledge the Privacy Policy and Cookie Policy</p>
+
+
+        </form>
+
+    </main>
+</body>
+
+</html>
