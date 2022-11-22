@@ -1,0 +1,236 @@
+body {
+    margin: 0 auto;
+    font-family: 'Open-Sans';
+    width: 1440px;
+    position: relative;
+}
+
+.menu {
+    width: 496px;
+    height: 30px;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #828282;
+}
+
+.menu::after {
+    content: '';
+    color: #828282;
+    position: absolute;
+    height: 0px;
+    width: 970px;
+    left: 235px;
+    top: 55px;
+    bottom: 0px;
+    border: 0.1px solid #828282;
+}
+
+.main-name {
+    margin-bottom: 50px;
+    width: 300px;
+    height: 60px;
+    margin-top: 12px;
+    margin-left: 235px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    color: #070707;
+    padding-top: 5px;
+}
+
+.main img {
+    margin: 0 auto;
+    width: 970px;
+    height: 387px;
+    display: block;
+}
+
+.about-me {
+    background-color: #E5E5E5;
+    text-align: center;
+}
+
+.about-me h2 {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding-top: 100px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+    color: rgba(7, 7, 7, 1);
+}
+
+.about-me p {
+    font-family: 'Open-Sans';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-me p:last-child {
+    padding-bottom: 100px;
+}
+
+.skills {
+    text-align: center;
+}
+
+.skills h2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+    color: rgba(7, 7, 7, 1);
+    text-align: center;
+}
+
+.skills p {
+    margin-bottom: 57px;
+}
+
+.apps {
+    display: flex;
+    justify-content: space-between;
+    width: 970px;
+    margin: 0 auto;
+    padding-bottom: 101px;
+}
+
+a {
+    text-decoration: none;
+    color: #828282;
+}
+
+img {
+    margin: 0 auto;
+}
+
+.about-me {
+    background-color: #E5E5E5;
+}
+
+.portfolio {
+    background-color: #E5E5E5;
+    text-align: center;
+}
+
+.portfolio h2 {
+    padding-top: 100px;
+    width: 150px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+    color: #070707;
+}
+
+.portfolio a {
+    width: 260px;
+    height: 24px;
+
+}
+
+.portfolio p {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    height: 24px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #070707;
+}
+
+.portfolio p:last-child {
+    padding-bottom: 100px;
+}
+
+.contacts {
+    text-align: center;
+}
+
+.contacts h2 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+    color: rgba(7, 7, 7, 1);
+}
+
+.contacts p:first-of-type {
+    width: 280px;
+    height: 46px;
+    margin: 0 auto;
+    font-family: 'Open-Sans';
+    font-weight: 400;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.btn-send {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    background-color: #070707;
+    font-family: 'Open-Sans';
+    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 25px;
+    color: #FFFFFF;
+    width: 180px;
+    height: 44px;
+    letter-spacing: 0.1em;
+    border-radius: 22px;
+    padding: 0px 16px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+    height: 40px;
+    margin: 0px auto 60px auto;
+}
+
+.icons+p {
+    width: 200px;
+    height: 60px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+@font-face {
+    font-family: "Open-Sans";
+    src: url(../styles/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
