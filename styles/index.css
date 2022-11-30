@@ -30,7 +30,7 @@ header {
     display: flex;
 } */
 
-nav {
+.menu nav {
     display: flex;
     justify-content: space-between;
     width: 352px;
@@ -47,7 +47,7 @@ a {
     color: #2F281E;
 }
 
-nav a:first-child {
+.menu nav a:first-child {
     color: #FF9900;
 }
 
@@ -150,4 +150,328 @@ nav a:hover {
 
 .main-section__image {
     height: 495px;
+}
+
+/* features */
+.features {
+    height: 510px;
+    position: relative;
+}
+
+.features h2 {
+    width: 539px;
+    height: 88px;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #2F281E;
+    margin-bottom: 30px;
+}
+
+.features__container {
+    height: 388px;
+    background-image: url(../assets/icons/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 20px;
+    margin-bottom: 105px;
+}
+
+.features__items {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1200px;
+    padding-bottom: 70px;
+}
+
+.features__item {
+    width: 270px;
+    height: 175px;
+}
+
+.features__item img {
+    margin-bottom: 30px;
+}
+
+.features__main-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #2F281E;
+    margin-bottom: 16px;
+}
+
+.features__sub-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+}
+
+.features__btn {
+    display: block;
+    width: 180px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 75px;
+    background: #FF9900;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
+
+.features__btn:hover {
+    background: #2e6edd;
+}
+
+/* advantages */
+.advantages {
+    margin-top: 105px;
+    position: relative;
+}
+
+.advantages__1 {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.advantages__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.advantages__1 img {
+    display: inline-block;
+}
+
+.advantages__1-text>p:first-child {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+}
+
+.advantages__1-text>h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #2F281E;
+    margin-bottom: 20px;
+}
+
+.advantages__1-text p:nth-child(3) {
+    width: 525px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+    margin-bottom: 40px;
+}
+
+.advantages__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 325px;
+    width: 525px;
+}
+
+.second{
+    width: 505px;
+}
+
+.advantages__list p:first-child {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #2F281E;
+    margin-bottom: 10px;
+}
+
+.advantages__list p:nth-child(2) {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+}
+
+.advantages__1-text ul{
+    list-style-type: none;
+}
+
+.advantages__1-text ul li{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+    margin-bottom: 30px;
+    margin-left: 65px;
+    position: relative;
+}
+
+.advantages__1-text ul li::before{
+    content: "";
+    position: absolute;
+    background-image: url(../assets/icons/icon-check.svg);
+    top: 0px;
+    width: 35px;
+    height: 35px;
+    left: -65px;
+}
+
+.advantages::after {
+    content: "";
+    position: absolute;
+    width: 1440px;
+    height: 1px;
+    bottom: -120px;
+    background: rgba(188, 208, 229, 0.496913);
+}
+
+/* footer */
+footer {
+    width: 1200px;
+    height: 210px;
+    margin: 0 auto;
+    margin-top: 190px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__links>p+nav {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-top: 30px;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+}
+
+.footer__service-info>p+nav {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-top: 30px;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+}
+
+.footer__links>p {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2F281E;
+    margin-bottom: 25px;
+}
+
+.footer__service-info>p {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2F281E;
+    margin-bottom: 25px;
+}
+
+.footer__feedback p {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2F281E;
+    width: 280px;
+    height: 57px;
+    margin-bottom: 25px;
+}
+
+.footer__form input {
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 10px;
+    width: 340px;
+    height: 50px;
+    border: 1px solid #BCD0E5;
+    border-radius: 4px;
+    font-size: large;
+}
+
+input::placeholder {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #BCD0E5;
+}
+
+.footer__form button {
+    display: block;
+    width: 180px;
+    height: 50px;
+    margin-top: 25px;
+    background: #FF9900;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.footer__form button:hover {
+    background: #2e6edd;
+}
+
+
+@font-face {
+    font-family: 'Gotham';
+    src: url(../assets/fonts/Gotham-Font/Gotham-Black.otf);
 }
