@@ -222,3 +222,10 @@ code{
     background-color: lightgray;
     padding: 8px;
 }
+
+.link{
+    /* text-decoration: none; */
+    text-decoration: underline;
+    color: #000000;
+    cursor: pointer;
+}
