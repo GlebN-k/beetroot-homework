@@ -1,282 +1,224 @@
 /* general styles */
-
-/* body{
-    background: #E5E5E5;
-} */
-
-section {
-    width: 1170px;
-    margin: 0 auto;
-    text-align: center;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-section:last-child {
-    margin-bottom: 120px;
+p{
+    margin-bottom: 0px;
 }
 
-section h2 {
-    margin-top: 120px;
+a {
+    text-decoration: none;
+}
+
+/* header */
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    background-color: white;
+}
+
+.empty-div{
+    width: 100%;
+    height: 80px;
     margin-bottom: 80px;
-    font-family: 'Delius Unicase';
+}
+
+.header-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.header__nav {
+    margin-left: -550px;
+}
+
+.header__nav a {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.lang {
+    font-family: 'Tourney';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+/* main */
+
+main {
+    display: grid;
+    grid-template-columns: 385px 1fr;
+    grid-gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* sidebar */
+.sidebar {
+    width: 385px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top:80px;
+}
+
+.sidebar a {
+    text-transform: uppercase;
+    font-family: 'Francois One';
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
-    line-height: 45px;
-    letter-spacing: 0.05em;
+    line-height: 48px;
+    letter-spacing: 0.04em;
     color: #000000;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid lightgray;
 }
 
-.author {
-    position: absolute;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: #FFFFFF;
-    bottom: 20px;
-    left: 20px;
+/* section content */
+.content{
+    margin-bottom: 90px;
+    margin-top: 30px;
 }
 
-.date {
-    position: absolute;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: #E0E0E0;
-    bottom: 20px;
-    right: 20px;
+/* background-picture */
+.background-picture{
+    background: url(../assets/icons/bg-picture.svg) no-repeat;
+    width: 760px;
+    height: 760px;
+    position: fixed;
+    right: 100px;
 }
 
-.image {
-    border-radius: 20px;
-    opacity: 0.8;
+.chapter{
     position: relative;
 }
 
-.image:hover {
-    opacity: 1;
+.chapter>p {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+    color: #000000;
 }
 
-.like-btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 20px;
-    top: 20px;
-    border-radius: 8px;
-    border: none;
-    display: none;
-    opacity: 0.5;
+p+p{
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.like-btn:hover {
-    opacity: 1;
-}
-
-.like-heart {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 0px;
-    top: 0px;
-    display: none;
-}
-
-.image:hover .like-heart {
+.chapter__name{
     display: inline-block;
-    cursor: url(../assets/icons/like/Vector.svg), pointer;
+    position: relative;
+    margin-bottom: 40px;
 }
 
-.like-heart:hover {
-    opacity: 1;
-}
-
-.image:hover .like-btn {
-    display: inline-block;
-}
-
-.download {
+.chapter__name > span{
     position: absolute;
-    width: 40px;
-    height: 40px;
-    right: 0px;
-    top: 0px;
-    display: none;
+    bottom: 30px;
+    right: -110px;
+    font-family: 'Farro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    color: #000000;
 }
 
-.download-btn {
+.chapter__name::before {
+    content: '';
     position: absolute;
-    width: 40px;
-    height: 40px;
-    right: 20px;
-    top: 20px;
-    border-radius: 8px;
-    border: none;
-    display: none;
-    opacity: 0.5;
+    bottom: 70px;
+    width: 100px;
+    height: 8px;
+    background-color: #000000;
 }
 
-.image:hover .download-btn {
-    display: inline-block;
-    cursor: url(../assets/icons/like/Vector.svg), pointer;
+.chapter__heading{
+    font-family: 'Francois One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    position: relative;
+    padding-top: 100px;
 }
 
-.download-btn:hover {
-    opacity: 1;
+.chapter__heading:nth-child(1){
+    font-family: 'Francois One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    position: relative;
+    /* padding-top: 100px; */
 }
 
-.image:hover .download {
-    display: inline-block;
-    cursor: url(../assets/icons/like/Vector.svg), pointer;
+#chapter1{
+    padding-top: 0px;
 }
 
-/* section "Architectural Photography" */
-.architectural-photo-container {
-    display: grid;
-    grid-template-columns: 370px 370px 370px;
-    grid-auto-rows: 370px;
-    grid-gap: 30px;
-    width: 1140px;
-    margin: 0 auto;
+ul{
+    padding: 0px;
 }
 
-.image-1 {
-    background-image: url(../images/image-1.jpg);
+li{
+    list-style-type: none;
+    font-family: 'PT Sans';
+    font-size: 28px;
+    line-height: 48px;
+    color: #000000; 
+    margin-bottom: 40px;
 }
 
-.image-2 {
-    background-image: url(../images/image2.jpg);
-    grid-column: 2/4;
+li:last-child{
+    margin-bottom: 0px;
 }
 
-.image-3 {
-    background-image: url(../images/image3.jpg);
-    grid-column: 1/3;
+li > p{
+    margin-top: 40px;
 }
 
-.image-4 {
-    background-image: url(../images/image-4.jpg);
+.strong{
+    font-family: "Francois One";
 }
 
-.image-5 {
-    background-image: url(../images/image-5.svg);
+code{
+    color: #000000;
+    background-color: lightgray;
+    padding: 10px 0px;
 }
 
-.image-6 {
-    background-image: url(../images/image6.jpg);
-    grid-column: 2/4;
-}
-
-/* section "Still Life Photography" */
-.life-photo-container {
-    display: grid;
-    grid-template-areas:
-        'img1 img2 img2'
-        'img3 img3 img4'
-        'img3 img3 img4'
-        'img5 img5 img6';
-    grid-auto-rows: 370px;
-    gap: 30px;
-    width: 1140px;
-    margin: 0 auto;
-}
-
-.img-1 {
-    grid-area: img1;
-    background-image: url(../images/img1.jpg);
-}
-
-.img-2 {
-    grid-area: img2;
-    background-image: url(../images/img2.jpg);
-}
-
-.img-3 {
-    grid-area: img3;
-    background-image: url(../images/img3.jpg);
-}
-
-.img-4 {
-    grid-area: img4;
-    background-image: url(../images/img4.jpg);
-}
-
-.img-5 {
-    grid-area: img5;
-    background-image: url(../images/img5.jpg);
-}
-
-.img-6 {
-    grid-area: img6;
-    background-image: url(../images/img6.jpg);
-}
-
-/* section "Portrait Photo" */
-
-.portrait-photo-container {
-    display: grid;
-    grid-template-areas:
-        'photo1 photo2 photo3'
-        'photo4 photo2 photo5'
-        'photo6 photo7 photo5'
-        'photo6 photo8 photo8'
-        'photo9 photo9 photo10';
-    grid-auto-rows: 370px;
-    gap: 30px;
-    width: 1140px;
-    margin: 0 auto;
-}
-
-.photo-1 {
-    background-image: url(../images/photo1.jpg);
-    grid-area: photo1;
-
-}
-
-.photo-2 {
-    background-image: url(../images/photo2.jpg);
-    grid-area: photo2;
-}
-
-.photo-3 {
-    background-image: url(../images/photo3.jpg);
-    grid-area: photo3;
-}
-
-.photo-4 {
-    background-image: url(../images/photo4.jpg);
-    grid-area: photo4;
-}
-
-.photo-5 {
-    background-image: url(../images/photo5.jpg);
-    grid-area: photo5;
-}
-
-.photo-6 {
-    background-image: url(../images/photo6.jpg);
-    grid-area: photo6;
-}
-
-.photo-7 {
-    background-image: url(../images/photo7.jpg);
-    grid-area: photo7;
-}
-
-.photo-8 {
-    background-image: url(../images/photo8.jpg);
-    grid-area: photo8;
-}
-
-.photo-9 {
-    background-image: url(../images/photo9.jpg);
-    grid-area: photo9;
-}
-
-.photo-10 {
-    background-image: url(../images/photo10.jpg);
-    grid-area: photo10;
+.select-word{
+    background-color: lightgray;
+    padding: 8px;
 }

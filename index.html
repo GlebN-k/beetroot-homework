@@ -5,258 +5,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Farro:wght@300&family=Francois+One&family=Montserrat:wght@400;500;600;700&family=PT+Sans&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&family=Staatliches&family=Tourney:wght@600&display=swap"
         rel="stylesheet">
-    <title>GRID</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Documentation</title>
 </head>
 
 <body>
+    <header>
+        <div class="header-wrapper">
+            <span class="lang">ENG</span>
+            <nav class="header__nav">
+                <a href="#">Documentation /</a>
+                <a href="#">Who's using</a>
+            </nav>
+            <a href="#"><img src="./assets/icons/company-logo-black.svg" alt="company logo"></a>
+        </div>
+    </header>
+    <div class="empty-div"></div>
     <main>
-        <!-- Architectural Photography -->
-        <section>
-            <h2>Architectural Photography</h2>
-            <div class="architectural-photo-container">
-                <div class="image image-1">
-                    <span class="author">Jezael Melgoza</span>
-                    <span class="date">5 June 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <a href="#">Introduction</a>
+            <a href="#chapter2">core components</a>
+            <a href="#chapter3">react fundamentals</a>
+            <a href="#chapter4">handling text input</a>
+        </aside>
+        <!-- section content  -->
+        <section class="content">
+            <!-- background-picture -->
+            <div class="background-picture"></div>
+            <!-- chapter items -->
+            <div class="chapter">
+                <div class="chapter__name">
+                    <h2 class="chapter__heading" id="chapter1">Introduction</h2>
+                    <span>Chapter 1</span>
                 </div>
-                <div class="image image-2">
-                    <span class="author">Tom W</span>
-                    <span class="date">30 March 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image image-3">
-                    <span class="author">Johan Mouchet</span>
-                    <span class="date">14 August 2019</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image image-4">
-                    <span class="author">Federico Di Dio</span>
-                    <span class="date">29 October 2020 </span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image image-5">
-                    <span class="author">Casey Horner</span>
-                    <span class="date">9 July 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image image-6">
-                    <span class="author">Alexander Rotker</span>
-                    <span class="date">22 April 2022</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
+                <p>Welcome to the very start of your React Native journey! If you're looking for environment setup
+                    instructions, they've moved to <ins>their own section</ins>. Continue
+                    reading for an introduction to the documentation, Native Components, React, and more!</p>
             </div>
-        </section>
-
-        <!-- Still Life Photography -->
-        <section>
-            <h2>Still Life Photography</h2>
-            <div class="life-photo-container">
-                <div class="image img-1">
-                    <span class="author">Robert Lukeman</span>
-                    <span class="date">30 June 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
+            <div class="chapter">
+                <div class="chapter__name">
+                    <h2 class="chapter__heading" id="chapter2">core components</h2>
+                    <span>Chapter 2</span>
                 </div>
-                <div class="image img-2">
-                    <span class="author">Sean Oulashin</span>
-                    <span class="date">5 September 2019</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image img-3">
-                    <span class="author">John Fowler</span>
-                    <span class="date">10 August 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image img-4">
-                    <span class="author">Dave Hoefler</span>
-                    <span class="date">13 February 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image img-5">
-                    <span class="author">Léonard Cotte</span>
-                    <span class="date">5 September 2019</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image img-6">
-                    <span class="author">Rob Mulally</span>
-                    <span class="date">30 May 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
+                <p>React Native is an open source framework for building Android and iOS applications using React and
+                    the app platform’s native capabiles. With React Native, you use JavaScript to access your platform’s
+                    APIs as well as to describe the appearance and behavior of your UI using React components:
+                    <em>bundles
+                        of reusable, nestable code</em>. You can learn more about React in the next section. But first,
+                    let’s cover how components work in React Native.
+                </p>
             </div>
-        </section>
+            <div class="chapter">
+                <div class="chapter__name">
+                    <h2 class="chapter__heading" id="chapter3">react fundamentals</h2>
+                    <span>Chapter 3</span>
+                </div>
+                <p>React Native runs on <ins>React</ins>, a popular open source library for building user interfaces with
+                    JavaScript. To make the most of React Native, it helps to understand React itself. This section can
+                    get you started or can serve as a refresher course.
+               </p>
+               <p>We’re going to cover the core concepts behind React:</p>
+               <ul>
+                <li><span class="strong">+ components.</span> The rest of this introduction to React uses cats in its examples: friendly, approachable creatures that need names and a cafe to work in.</li>
+                <li><span class="strong">+ JSX.</span> React and React Native use JSX, a syntax that lets you write elements inside JavaScript like so:<br>  
+                    <code>&lt;Text&gt;Hello, I am your cat!&lt;/Text&gt;</code>.
+                <p>The React docs have <ins>a comprehensive guide to JSX</ins> you can refer to learn even more. Because JSX is JavaScript, you can use variables inside it. Here you are declaring a <span class="select-word">name</span> for the cat, name and embedding it with curly braces inside <code>&lt;Text&gt;</code></p>
+                </li>
+                <li><span class="strong">+ props.</span> Props is short for “properties”.</li>
+                <li><span class="strong">+ state.</span> While you can think of props as arguments you use to configure how components render, state is like a component’s personal data storage. State is useful for handling data that changes over time or that comes from user interaction. State gives your components memory!</li>
+            </ul>
+            </div>
+            <div class="chapter">
+                <div class="chapter__name">
+                    <h2 class="chapter__heading" id="chapter4">handling text input</h2>
+                    <span>Chapter 4</span>
+                </div>
+                <p>TextInput is a Core Component that allows the user to enter text. It has an <em>onChangeText</em>
+                    prop that
+                    takes a function to be called every time the text changed, and an onSubmitEditing prop that takes a
+                    function to be called when the text is submitted.TextInput is a Core Component that allows the user
+                    to enter text. It has an onChangeText prop that takes a function to be called every time the text
+                    changed, and an onSubmitEditing prop that takes a function to be called when the text is submitted.
+                </p>
+                <p>For example, let's say that as the user types, you're translating their words into a different
+                    language. In this new language, every single word is written the same way: 🍕. So the sentence
+                    "Hello there Bob" would be translated as "🍕 🍕".</p>
 
-        <!-- Portrait and Fashion Photography -->
-        <section>
-            <h2>Portrait and Fashion Photography</h2>
-            <div class="portrait-photo-container">
-                <div class="image photo-1">
-                    <span class="author">Pooja Chaudhary</span>
-                    <span class="date">30 June 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-2">
-                    <span class="author">Dom Hill</span>
-                    <span class="date">13 October 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-3">
-                    <span class="author">Seth Doyle</span>
-                    <span class="date">30 May 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-4">
-                    <span class="author">devn</span>
-                    <span class="date">30 June 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-5">
-                    <span class="author">Noah Buscher</span>
-                    <span class="date">13 February 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-6">
-                    <span class="author">Sincerely Media</span>
-                    <span class="date">5 June 2020</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-7">
-                    <span class="author">Jezael Melgoza</span>
-                    <span class="date">7 January 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-8">
-                    <span class="author">Melissa Askew</span>
-                    <span class="date">29 April 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-9">
-                    <span class="author">Brooke Cagle</span>
-                    <span class="date">5 August 2019</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
-                <div class="image photo-10">
-                    <span class="author">Clem Onojeghuo</span>
-                    <span class="date">1 July 2021</span>
-                    <button class="like-btn" type="button">
-                        <img class="like-heart" src="./assets/icons/heart.svg" alt="like-heart">
-                    </button>
-                    <button class="download-btn">
-                        <img class="download" src="./assets/icons/like/download.svg">
-                    </button>
-                </div>
             </div>
         </section>
     </main>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script> -->
 </body>
 
 </html>
