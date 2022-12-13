@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Inter&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Creating account</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="form-container">
+            <div class="form-wrapper">
+                <h2>Profile</h2>
+                <form action="#" method="post">
+                    <!-- downloading photo block -->
+                    <div class="photo-container">
+                        <div class="photo-user">
+                            <img src="./images/avatar.png" alt="user-avatar">
+                        </div>
+                        <div class="input-download">
+                            <label for="download-photo">
+                                <input class="download-photo__input" type="file" name="download-photo"
+                                    id="download-photo">
+                                <img src="./icons/1. Buttons/1. Small/4. Icons/Photo Camera.svg"
+                                    alt="download-photo-icon">
+                            </label>
+                            <p>Up to 1 MB (300x300 px)</p>
+                        </div>
+                        <button>
+                            <img src="./icons/1. Buttons/1. Small/4. Icons/🔹 Icon Color.svg" alt="">
+                        </button>
+                    </div>
+
+                    <!-- presonal information block -->
+                    <div class="personal-info-container">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="hello-wrapper">
+                            <label for="country">Country</label>
+                            <div class="select-wrapper">
+                                <select class="select-country" name="country" id="country" required>
+                                    <option value="" disabled selected hidden>Select</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Germany">Germany</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" required>
+                        </div>
+                        <div>
+                            <label for="zip-code">Zip Code</label>
+                            <input type="number" name="zip-code" id="zip-code" required>
+                        </div>
+                        <div>
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" name="phone-number" id="phone-number" required>
+                        </div>
+                        <button class="btn-update">Update</button>
+
+                    </div>
+
+                </form>
+            </div>
+    </main>
+</body>
+
+</html>
