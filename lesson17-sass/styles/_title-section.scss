@@ -1,0 +1,57 @@
+.title {
+    width: $widthheader;
+    margin-top: 12.1rem;
+    position: relative;
+    text-align: center;
+  
+    h2 {
+      font-size: 6rem;
+      line-height: 6.6rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: $goldcolor;
+      margin-bottom: 4rem;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 900;
+    }
+  
+    h3 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #898f8f;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  // bonfire-icon with decorative lines
+  .bonfire-icon {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 12rem;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: -215px;
+      height: 1px;
+      width: 210px;
+      background-color: $goldcolor;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: -215px;
+      height: 1px;
+      width: 210px;
+      background-color: $goldcolor;
+    }
+  }

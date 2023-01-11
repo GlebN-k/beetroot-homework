@@ -1,0 +1,104 @@
+.teammate__content {
+    width: 43rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.teammate__content h3 {
+    display: inline-block;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #666666;
+    margin-bottom: 6rem;
+    position: relative;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 6.5rem;
+      width: 10rem;
+      height: 1px;
+      background-color: $goldcolor;
+    }
+  }
+  
+  .teammate__content h4 {
+    font-family: "Raleway";
+    font-style: normal;
+    //   font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #666666;
+    margin-bottom: 3rem;
+  }
+  
+  .teammate__content-links {
+    margin-bottom: 5rem;
+  }
+  
+  .teammate__content-links a {
+    margin-left: 5px;
+  }
+  
+  .teammate__content-desscription {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 2rem;
+  }
+  
+  // decore rectangles
+  .decore-rectangles {
+      display: flex;
+      width: 5rem;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+  }
+  
+  .decore__rectangle1{
+      width: 10px;
+      height: 4px;
+      background-color: $goldcolor;
+  }
+  .decore__rectangle2{
+      width: 20px;
+      height: 4px;
+      background-color: $goldcolor;
+  }
+  .decore__rectangle3{
+      width: 10px;
+      height: 4px;
+      background-color: $goldcolor;
+  }
+  
+  // button view profile
+  .teammate__button {
+      box-sizing: border-box;
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #666666;
+      border: solid $goldcolor 1px;
+      padding: 5px 10px;
+    
+      &:hover {
+        background-color: $btnhover;
+      }
+    }

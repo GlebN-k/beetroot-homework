@@ -1,0 +1,30 @@
+html {
+    font-size: 62.5%;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .teammate__wrapper {
+    display: flex;
+    width: 103rem;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 100rem;
+  }
+  
+  // decorative vertical line
+  .teammate__photo::after {
+    content: "";
+    height: 56rem;
+    position: absolute;
+    width: 1px;
+    background-color: $goldcolor;
+    top: -80px;
+    right: -115px;
+  }
+  
+  

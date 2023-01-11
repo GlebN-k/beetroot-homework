@@ -1,0 +1,46 @@
+.teammate__photo {
+    position: relative;
+    height: 400px;
+  }
+  
+// decorative angles for teammate photo
+  .left-up-angle {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    border: $goldcolor solid;
+    border-width: 1px 0px 0px 1px;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .right-up-angle {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    border: $goldcolor solid;
+    border-width: 1px 1px 0px 0px;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .left-down-angle {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    border: $goldcolor solid;
+    border-width: 0px 0px 1px 1px;
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .right-down-angle {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    border: $goldcolor solid;
+    border-width: 0px 1px 1px 0px;
+    width: 10rem;
+    height: 10rem;
+  }
+  
