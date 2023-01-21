@@ -1,0 +1,163 @@
+// latest Post blog
+.latest-posts__container {
+  margin-bottom: 11.2rem;
+
+  .posts__title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9rem;
+    margin-bottom: 5rem;
+
+    h3 {
+      font-family: "Red Hat Display";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 166%;
+      letter-spacing: 0.1em;
+      color: #000000;
+    }
+
+    a {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 166%;
+      letter-spacing: 0.1em;
+      color: #7b7b7b;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+//   container for posts
+.latest-posts__item-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  .latest-post__item {
+    img {
+      // flex: 50%;
+    }
+    .post__text {
+      margin-top: 0px;
+      padding: 0px 0px;
+
+      .post__data-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2.5rem;
+
+        .post__category {
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 166%;
+          letter-spacing: 0.1em;
+          color: #7b7b7b;
+        }
+
+        .post__date {
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 166%;
+          letter-spacing: 0.1em;
+          color: #7b7b7b;
+        }
+      }
+      .post__name {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 166%;
+        letter-spacing: 0.1em;
+        color: #000000;
+        margin-bottom: 2.5rem;
+        max-width: 370px;
+        margin-top: 2.5rem;
+      }
+
+      .post__description {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 166%;
+        letter-spacing: 0.05em;
+        color: #565656;
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .latest-posts__item-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .latest-post__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .latest-post__item {
+    img {
+      flex: 1;
+      width: 340px;
+    }
+  }
+  .latest-post__item.second {
+    img {
+      flex: 1;
+    }
+
+    .post__text {
+      order: -1;
+      flex: 1;
+    }
+  }
+}
+
+@media screen and (max-width:320px) {
+  .posts__title{
+    flex-direction: column;
+    a{
+      margin-top: 20px;
+    }
+    img{
+      width: 25px;
+    }
+  }
+}
+
+@media screen and (max-width:320px) {
+  .latest-posts__item-container{
+    // flex-direction: column;
+    .latest-post__item{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .latest-post__item.second{
+      img{
+        order: -1;
+      }
+    }
+  }
+}

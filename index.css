@@ -112,16 +112,6 @@ label {
   cursor: pointer;
 }
 
-html {
-  font-size: 10px;
-}
-
-body {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .intro {
   width: 100%;
 }
@@ -136,6 +126,15 @@ body {
 @media screen and (max-width: 768px) {
   .intro__header {
     padding: 20px 34px;
+  }
+  .intro .intro__navbar.topnav.icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .intro .intro__navbar.topnav.icon a {
+    color: inherit;
+    margin-left: 30px;
+    font-size: 20px;
   }
 }
 .intro .intro__logo {
@@ -182,6 +181,11 @@ body {
   padding-left: 135px;
 }
 @media screen and (max-width: 768px) {
+  .intro .intro__main-photo {
+    width: 100%;
+    background-image: url(../assets/images/bg-image-768.png);
+    height: 320px;
+  }
   .intro .intro__main-photo h1 {
     padding-top: 30px;
     padding-left: 20px;
@@ -191,7 +195,59 @@ body {
     max-width: 550px;
   }
 }
+@media screen and (max-width: 320px) {
+  .intro .intro__main-photo {
+    width: 100%;
+    background-image: url(../assets/images/bg-image-320px.png);
+    height: 500px;
+    width: 320px;
+  }
+}
 
+@media (max-width: 320px) {
+  .intro .intro__main-photo {
+    height: 500px;
+  }
+  .intro .intro__main-photo h1 {
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: 100px;
+    padding-top: 70px;
+  }
+}
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 320px) {
+  .intro__icom-search {
+    width: 18px;
+  }
+}
 .main-container {
   max-width: 1170px;
   margin: 0 auto;
@@ -208,6 +264,16 @@ body {
   margin-top: 9rem;
   margin-bottom: 5rem;
 }
+@media (max-width: 768px) {
+  .blog__container h2 {
+    margin-top: 6rem;
+  }
+}
+@media (max-width: 320px) {
+  .blog__container h2 {
+    text-align: center;
+  }
+}
 .blog__container .blog__items-container {
   display: flex;
   flex-direction: column;
@@ -218,8 +284,8 @@ body {
 }
 @media screen and (max-width: 768px) {
   .blog__container .article__image {
-    width: 420px;
-    height: 320px;
+    width: 340px;
+    height: 280px;
   }
 }
 
@@ -236,6 +302,11 @@ body {
   letter-spacing: 0.1em;
   color: #7b7b7b;
   margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .article__text .article__category {
+    margin-bottom: 10px;
+  }
 }
 .article__text .article__name {
   font-family: "Red Hat Display";
@@ -274,18 +345,20 @@ body {
   align-items: center;
   margin-left: 10px;
 }
+@media screen and (max-width: 320px) {
+  .article__text .article__description a {
+    width: 25px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .article__text {
     margin-top: 0px;
+    padding: 0px;
+    padding-left: 30px;
   }
   .article__text .article__date {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .blog__container h2 {
-    text-align: center;
+    margin-bottom: 25px;
   }
 }
 @media screen and (max-width: 650px) {
@@ -306,6 +379,47 @@ article.second .article__text {
   margin-left: 90px;
 }
 
+@media screen and (max-width: 768px) {
+  article.second .article__text {
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .article {
+    flex-direction: column-reverse;
+  }
+  .article__text {
+    margin-top: 20px;
+    max-width: 480px;
+    padding: 0px;
+    padding-bottom: 20px;
+  }
+  .article.second {
+    flex-direction: column;
+  }
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 0 35px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main-container {
+    padding: 0 12px;
+  }
+}
 .latest-posts__container {
   margin-bottom: 11.2rem;
 }
@@ -395,16 +509,60 @@ article.second .article__text {
   max-width: 450px;
 }
 
+@media screen and (max-width: 768px) {
+  .latest-posts__item-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .latest-post__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .latest-post__item img {
+    flex: 1;
+    width: 340px;
+  }
+  .latest-post__item.second img {
+    flex: 1;
+  }
+  .latest-post__item.second .post__text {
+    order: -1;
+    flex: 1;
+  }
+}
+@media screen and (max-width: 320px) {
+  .posts__title {
+    flex-direction: column;
+  }
+  .posts__title a {
+    margin-top: 20px;
+  }
+  .posts__title img {
+    width: 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .latest-posts__item-container .latest-post__item {
+    display: flex;
+    flex-direction: column;
+  }
+  .latest-posts__item-container .latest-post__item.second img {
+    order: -1;
+  }
+}
 .popular__container {
   margin-bottom: 9rem;
 }
-.popular__container .posts__title {
+.popular__container .popular__title {
   display: flex;
   justify-content: space-between;
   margin-top: 9rem;
   margin-bottom: 5rem;
 }
-.popular__container .posts__title h3 {
+.popular__container .popular__title h3 {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 600;
@@ -413,7 +571,7 @@ article.second .article__text {
   letter-spacing: 0.1em;
   color: #000000;
 }
-.popular__container .posts__title a {
+.popular__container .popular__title a {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
@@ -424,32 +582,33 @@ article.second .article__text {
   display: flex;
   align-items: center;
 }
-.popular__container .posts__title a img {
+.popular__container .popular__title a img {
   margin-left: 20px;
+  width: 25px;
 }
-.popular__container .items__container {
+.popular__container .popular__items-container {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
   margin-bottom: 5rem;
 }
-.popular__container .items__container .latest-post__item {
+.popular__container .popular__items-container .popular-post__item {
   flex: 1;
 }
-.popular__container .items__container .latest-post__item img {
+.popular__container .popular__items-container .popular-post__item img {
   width: 100%;
 }
-.popular__container .items__container .latest-post__item .post__text {
+.popular__container .popular__items-container .popular-post__item .popular-post__text {
   margin-top: 0px;
   padding: 0px 0px;
 }
-.popular__container .items__container .latest-post__item .post__text .post__data-container {
+.popular__container .popular__items-container .popular-post__item .popular-post__text .popular-post__data-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2.5rem;
 }
-.popular__container .items__container .latest-post__item .post__text .post__data-container .post__category {
+.popular__container .popular__items-container .popular-post__item .popular-post__text .popular-post__data-container .popular-post__category {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
@@ -458,7 +617,7 @@ article.second .article__text {
   letter-spacing: 0.1em;
   color: #7b7b7b;
 }
-.popular__container .items__container .latest-post__item .post__text .post__data-container .post__date {
+.popular__container .popular__items-container .popular-post__item .popular-post__text .popular-post__data-container .popular-post__date {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
@@ -467,7 +626,7 @@ article.second .article__text {
   letter-spacing: 0.1em;
   color: #7b7b7b;
 }
-.popular__container .items__container .latest-post__item .post__text .post__name {
+.popular__container .popular__items-container .popular-post__item .popular-post__text .popular-post__name {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 500;
@@ -479,7 +638,7 @@ article.second .article__text {
   max-width: 370px;
   margin-top: 2.5rem;
 }
-.popular__container .items__container .latest-post__item .post__text .post__description {
+.popular__container .popular__items-container .popular-post__item .popular-post__text .popular-post__description {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
@@ -508,6 +667,24 @@ article.second .article__text {
   color: gold;
 }
 
+@media screen and (max-width: 320px) {
+  .popular__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .popular__container .popular__title {
+    flex-direction: column;
+    font-size: 28px;
+  }
+  .popular__container .popular__title a {
+    margin-top: 20px;
+  }
+  .popular__container .popular__items-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .info__container {
   display: flex;
   justify-content: space-between;
@@ -527,6 +704,9 @@ article.second .article__text {
   color: #000000;
   margin-bottom: 12px;
 }
+.info__container .info__author a {
+  max-width: 25px;
+}
 .info__container .info__comments {
   font-family: "Lato";
   font-style: normal;
@@ -542,6 +722,26 @@ article.second .article__text {
   margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 768px) {
+  .info__container {
+    flex-direction: column;
+  }
+  .info__container .info__comments {
+    text-align: right;
+    max-width: none;
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .info__container {
+    flex-direction: column;
+  }
+  .info__container .info__comments {
+    text-align: left;
+    max-width: none;
+    margin-top: 3rem;
+  }
+}
 .footer {
   background-color: #f4f4f4;
   width: 100%;
@@ -613,11 +813,10 @@ article.second .article__text {
 .contact__wrapper .social-icons__icon:hover {
   background-color: #565656;
   cursor: url(../assets/icons/cursor.svg), pointer;
-  stroke: white;
-  fill: white;
 }
-.contact__wrapper .social-icons__icon:hover .onhovered {
-  stroke: white;
+.contact__wrapper .social-icons__icon:hover svg path {
+  background-color: #565656;
+  cursor: url(../assets/icons/cursor.svg), pointer;
   fill: white;
 }
 @media screen and (max-width: 768px) {
@@ -629,17 +828,6 @@ article.second .article__text {
   .contact__wrapper .project-overview {
     width: 100%;
   }
-}
-
-.copyright-info {
-  text-align: center;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 166%;
-  letter-spacing: 0.1em;
-  color: #000000;
 }
 
 @media screen and (max-width: 768px) {
@@ -666,6 +854,28 @@ article.second .article__text {
     padding-right: 3.6rem;
     margin-bottom: 2.5rem;
   }
+  .contact-info .contact-info__question {
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: 0.05em;
+  }
+  .copyright-info {
+    max-width: 200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+}
+.copyright-info {
+  text-align: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: #000000;
+  padding-bottom: 3rem;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,156 +1,162 @@
 // footer
 .footer {
-    background-color: #f4f4f4;
-    width: 100%;
-    // padding: 0px;
-  }
-  
-  .contact__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 13.5rem;
-    padding-right: 13.5rem;
-    margin-bottom: 2.5rem;
-  
-    //   block with phone nember and email
-    .contact-info {
-      &__question {
-        font-family: "Red Hat Display";
-        font-style: normal;
-        //   font-weight: 400;
-        font-size: 48px;
-        line-height: 64px;
-        letter-spacing: 0.05em;
-        color: #000000;
-        margin-top: 7rem;
-        margin-bottom: 3rem;
-      }
-  
-      &__tel {
-        display: block;
-        font-family: "Lato";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 166%;
-        letter-spacing: 0.1em;
-        color: #000000;
-        margin-bottom: 1.5rem;
-      }
-  
-      &__email {
-        display: block;
-        font-family: "Lato";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 166%;
-        letter-spacing: 0.1em;
-        color: #000000;
-      }
-    }
-  
-    @media screen and (max-width: 768px) {
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-  
-      .contact__wrapper {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  
-    // social icons
-    .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      margin-top: 7rem;
-  
-      &__icon {
-        box-sizing: border-box;
-        padding: 10px;
-        border: 1px solid #565656;
-        width: 50px;
-        height: 50px;
-        // display: flex;
-        text-align: center;
-  
-        &:hover {
-          background-color: #565656;
-          cursor: url(../assets/icons/cursor.svg), pointer;
-          stroke: white;
-          fill: white;
-        }
-      }
-    }
-  
-    .social-icons__icon:hover .onhovered {
-      stroke: white;
-      fill: white;
-    }
-  
-  
-  
-    // tablet
-    @media screen and (max-width: 768px) {
-      .header,
-      .main {
-        padding-left: 35px;
-        padding-right: 35px;
-      }
-  
-      .project-overview {
-        width: 100%;
-      }
-    }
-  
-    // phone
-
+  background-color: #f4f4f4;
+  width: 100%;
 }
-  
-    // Copyright info
-    .copyright-info {
-      text-align: center;
+
+.contact__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13.5rem;
+  padding-right: 13.5rem;
+  margin-bottom: 2.5rem;
+
+  //   block with phone nember and email
+  .contact-info {
+    &__question {
+      font-family: "Red Hat Display";
+      font-style: normal;
+      font-size: 48px;
+      line-height: 64px;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-top: 7rem;
+      margin-bottom: 3rem;
+    }
+
+    &__tel {
+      display: block;
       font-family: "Lato";
       font-style: normal;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 16px;
+      line-height: 166%;
+      letter-spacing: 0.1em;
+      color: #000000;
+      margin-bottom: 1.5rem;
+    }
+
+    &__email {
+      display: block;
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
       line-height: 166%;
       letter-spacing: 0.1em;
       color: #000000;
     }
-  
+  }
+
   @media screen and (max-width: 768px) {
-    .contact__wrapper {
+    .contact-info {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-  
-    .social-icons{
-      margin-top: 1rem;
-    }
-  }
-  
-
-  @media screen and (max-width: 320px) {
-    .header,
-    .main {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    img {
-      width: 100vw;
-    }
 
     .contact__wrapper {
-      padding-left: 3.6rem;
-      padding-right: 3.6rem;
-      margin-bottom: 2.5rem;
-    
+      display: flex;
+      flex-direction: column;
+    }
   }
+
+  // social icons
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    margin-top: 7rem;
+
+    &__icon {
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #565656;
+      width: 50px;
+      height: 50px;
+      // display: flex;
+      text-align: center;
+
+      &:hover {
+        background-color: #565656;
+        cursor: url(../assets/icons/cursor.svg), pointer;
+      }
+    }
+  }
+
+  .social-icons__icon:hover svg path {
+    background-color: #565656;
+    cursor: url(../assets/icons/cursor.svg), pointer;
+    fill: white;
+  }
+
+  // Copyright info
+
+  // tablet
+  @media screen and (max-width: 768px) {
+    .header,
+    .main {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    .project-overview {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+}
+
+// phone
+@media screen and (max-width: 320px) {
+  .header,
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  img {
+    width: 100vw;
+  }
+
+  .contact__wrapper {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-info .contact-info__question {
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: 0.05em;
+  }
+
+  .copyright-info {
+    max-width: 200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+}
+
+.copyright-info {
+  text-align: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: #000000;
+  padding-bottom: 3rem;
+  margin: 0 auto;
 }
