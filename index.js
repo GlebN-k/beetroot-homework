@@ -1,128 +1,217 @@
-// 1.Напиши всі можливі варіанти створення функцій.
-// function declaration
+// Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.
+const userAge = prompt("Please, enter your age")
 
-function myFunc(a, b) {
-  return a + b;
-}
-
-// function expression
-
-const myFunc2 = function (a, b) {
-  return a + b;
-};
-
-// arrow function
-const myFunc3 = (a, b) => a + b;
-
-// 2.Створи функцію, яка буде виводити кількість переданих їй аргументів.
-function getArgumentsNumber() {
-  return arguments.length;
-}
-console.log(getArgumentsNumber(1, 2, 3, 4, 5, 6, 7, 8, 9));
-
-// 3.Напиши функцію, яка приймає 2 числа і повертає :
-// -1, якщо перше число менше, ніж друге;
-// 1 - якщо перше число більше, ніж друге;
-// 0 - якщо числа рівні.
-function compareNumbers(a, b) {
-  if (arguments.length < 2) {
-    return `You need to enter 2 arguments`;
-  }
-
-  for (let i of arguments) {
-    if (i === "" || i === " " || isNaN(i)) {
-      return "invalid data";
+if (isNaN(userAge) || userAge === "" || userAge < 0) {
+    console.log("invalid data")
+} else {
+    switch (true) {
+        case (userAge >= 0 && userAge < 12):
+            console.log("User is a child")
+            break;
+        case (userAge >= 12 && userAge < 18):
+            console.log("User is a teenager")
+            break;
+        case (userAge >= 18 && userAge < 60):
+            console.log("User is a adult")
+            break;
+        case (userAge >= 60):
+            console.log("User is a retiree")
+            break;
     }
-  }
-  return a < b ? -1 : a > b ? 1 : 0;
 }
-console.log(compareNumbers(10, 9));
 
-// 4. Напиши функцію, яка обчислює факторіал переданого їй числа.
-function calculateFactorial(a) {
-  if (!a || a === " " || isNaN(a)) return `invalid data`;
+// 2.Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).
+const number = prompt("Please enter number from 0 to 9");
 
-  return a === 1 ? 1 : a * calculateFactorial(a - 1);
-}
-console.log(calculateFactorial(5));
-
-// 5. Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.
-function getConcatNumber(a = 0, b = 0, c = 0) {
-  for (let i of arguments) {
-    if (i === "" || i === " " || isNaN(i)) {
-      return "invalid data";
+    switch (number) {
+        case "0":
+            console.log(")")
+            break;
+        case "1":
+            console.log("!")
+            break;
+        case "2":
+            console.log("@")
+            break;
+        case "3":
+            console.log("#")
+            break;
+        case "4":
+            console.log("$")
+            break;
+        case "5":
+            console.log("%")
+            break;
+        case "6":
+            console.log("^")
+            break;
+        case "7":
+            console.log("&")
+            break;
+        case "8":
+            console.log("*")
+            break;
+        case "9":
+            console.log("(")
+            break;
+            default:
+                console.log("invalid data")
     }
-  }
-  return a * 100 + b * 10 + c;
-  //   alternative option  +(`${a}${b}${c}`)
-}
-console.log(getConcatNumber(7, 2, 1));
 
-// 6. Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
+// 3.Підрахуй суму всіх чисел в заданому користувачем діапазоні.
 
-function getSquare(a, b) {
-  for (let i of arguments) {
-    if (i === "" || i === " " || isNaN(i)) {
-      return "invalid data";
+const firstNumber = +prompt("Enter the first number");
+const secondNumber = +prompt("Enter the second number");
+let result = 0;
+
+if (isNaN(firstNumber) || firstNumber === "" || isNaN(secondNumber) || secondNumber === "") {
+    console.log("invalid data")
+} else {
+
+    for (let i = firstNumber; i <= secondNumber; i++) {
+        result += i;
     }
-  }
-  return a * (b || a);
+
+console.log(result)
 }
-console.log(getSquare(2, 12));
-
-// 7. Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
-
-function getPerfectNumber(n) {
-  let sumOfAllDividers = 0;
-
-  if (n === "" || n === " " || isNaN(n)) {
-    return "invalid data";
-  }
-
-  for (let i = 1; i < n; i++) {
-    if (!(n % i)) {
-      sumOfAllDividers += i;
+// 2. Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+// від 200 до 300 - знижка буде 3%;
+// від 300 до 500 - 5%;
+// від 500 і вище - 7%.
+const purchaseSum = prompt("Please enter purchase sum")
+if (isNaN(purchaseSum) || purchaseSum ==="" || purchaseSum ===" ") {
+    console.log("invalid data")
+} else {
+    switch (true) {
+        case (purchaseSum >= 200 && purchaseSum < 300):
+            console.log(`Purchase sum after discont is ${purchaseSum - (purchaseSum*0.03)}`)
+            break;
+        case (purchaseSum >= 300 && purchaseSum < 500):
+            console.log(`Purchase sum after discont is ${purchaseSum - (purchaseSum*0.05)}`)
+            break;
+        case (purchaseSum >= 500 ):
+            console.log(`Purchase sum after discont is ${purchaseSum - (purchaseSum*0.07)}`)
+            break;
+        default:
+            console.log("Your purchase sum is not enough for discount")
     }
-  }
-
-  return sumOfAllDividers == n
-    ? "Your number is pefect"
-    : "Your number is not perfect";
-}
-console.log(getPerfectNumber(28));
-
-// 8.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
-
-function findPerfectNumber(i) {
-  let sumOfAllDividers = 0;
-  for (let j = 1; j < i; j++) {
-    if (!(i % j)) {
-      sumOfAllDividers += j;
-    }
-  }
-
-  if (sumOfAllDividers == i) {
-    return i;
-  }
 }
 
-function getAllPerfectNumbers(a, b) {
-  let arr = [];
+// // 3. Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+let positiveNumbers = 0;
+let negativeNumbers = 0;
+let zeroNumbers = 0;
+let oddNumbers = 0;
+let evenNumbers = 0;
 
-  if (arguments.length < 2) return "you need to enter two numbers";
+for (let i = 0; i <= 9; i++) {
+    let number = prompt("Please enter a number")
 
-  for (let i of arguments) {
-    if (i === "" || i === " " || isNaN(i)) {
-      return "invalid data";
+    if (isNaN(number) || number === "") {
+        alert("You entered not a number")
+    } else {
+
+        number == 0 ? ++zeroNumbers : number > 0 ? ++positiveNumbers : ++negativeNumbers
+
+        number % 2 ? ++oddNumbers : ++evenNumbers
     }
-  }
-
-  for (let i = a; i <= b; i++) {
-    let number = findPerfectNumber(i);
-    if (number) {
-      arr.push(number);
-    }
-  }
-  return arr.join(", ");
 }
-console.log(getAllPerfectNumbers(1, 10000));
+
+console.log(`You entered some numbers, of which
+        positive numbers: ${positiveNumbers};
+        negative numbers: ${negativeNumbers};
+        zeros: ${zeroNumbers};
+        oddNumbers: ${oddNumbers};
+        evenNumbers: ${evenNumbers}.
+        `
+)
+
+// Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
+let today = "Monday"
+while (confirm(`${today}. Would you like to see next day?`)) {
+
+    switch(today) {
+        case "Monday":
+        today = "Thuesday";
+        break;
+        case "Thuesday":
+        today = "Wednesday";
+        break;
+        case "Wednesday":
+        today = "Thursday";
+        break;
+        case "Thursday":
+        today = "Friday";
+        break;
+        case "Friday":
+        today = "Saturday";
+        break;
+        case "Saturday":
+        today = "Sunday";
+        break;
+        case "Sunday":
+        today = "Monday";
+        break;
+    }
+}
+
+// 2. Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10./
+for (let i = 2; i <= 9; i++) {
+    let result;
+    console.log(`multiplication table for number ${i}`)
+    for (j = 1; j <= 10; j++) {
+        result = i * j
+        console.log(`${i} * ${j} = ${i * j}`)
+    }
+}
+
+// 3.Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+let day = +prompt("Please enter calendar day");
+let month = +prompt("Please enter number of a month");
+let year = +prompt("Please enter number of a year");
+let nextDay = "";
+
+console.log(`You entered ${day}.${month}.${year}`);
+
+const monthsOf31days = [1, 3, 5, 7, 8, 10, 12];
+const monthsOf30days = [4, 6, 9, 11];
+
+switch (true) {
+  case day === 31 && month === 12:
+    day = 1;
+    month = 1;
+    ++year;
+    break;
+
+  case day === 31 && monthsOf31days.includes(month):
+    day = 1;
+    ++month;
+    break;
+
+  case day === 30 && monthsOf30days.includes(month):
+    day = 1;
+    ++month;
+    break;
+
+  case ((month === 2 && 0 == year % 4) || 0 == year % 400) && day === 29:
+    day = 1;
+    ++month;
+    break;
+
+  case ((month === 2 && 0 == year % 4) || 0 == year % 400) && day === 28:
+    ++day;
+    break;
+
+  case month === 2 && day === 28:
+    day = 1;
+    ++month;
+    break;
+
+  case day < 31:
+    ++day;
+    break;
+}
+day < 10 ? (day = "0" + day) : day;
+month < 10 ? (month = "0" + month) : month;
+
+console.log(`Next day is ${day}.${month}.${year}`);
