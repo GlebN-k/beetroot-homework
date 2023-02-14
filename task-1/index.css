@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main{
+    max-width: 550px;
+    text-align: center;
+}
+
+/* .main-header{
+    width: 550px;
+} */
+
+.hidden {
+    display: none;
+}
+
+.text-area{
+    width: 550px;
+    height: 100px;
+    box-sizing: border-box;
+}
