@@ -1,0 +1,182 @@
+body {
+    background-color: rgb(39, 37, 37);
+}
+
+.container {
+    /* max-width: 50%; */
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* container for results */
+.movie-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.heading {
+    text-align: center;
+    letter-spacing: 10px;
+    font-family: 'Shantell Sans';
+    font-size: 34px;
+    font-weight: 900;
+    color: orange;
+    /* rgb(23 185 176); */
+    margin-bottom: 30px;
+    /* height: 48px; */
+}
+
+/* form */
+
+.form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputs-container {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+select {
+    border-radius: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+/* button to send form */
+.btn {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.film {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 250px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    color: aqua;
+    font-family: "Rubik";
+}
+
+.film-name {
+    height: 48px;
+    margin: 0px;
+}
+
+/*  */
+.info-about-film {
+    color: antiquewhite;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* film poster */
+.film-poster {
+    width: 250px;
+    height: 350px;
+    display: block;
+}
+
+/* button to show/hide details about the film */
+.btn-details {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: none;
+    background-color: orange;
+    border-radius: 10px;
+    font-family: 'Shantell Sans';
+    /* color: ; */
+}
+
+.btn-details:hover {
+    background-color: rgb(95, 95, 209);
+    color: gold;
+    /* color: ; */
+}
+
+.chosen-film-info {
+    /* border: 2px solid rgb(233, 9, 9); */
+    color: gold;
+    /* background-color: gray; */
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.movie-container2 {
+    display: flex;
+}
+
+.movie-info {
+    margin-top: 30px;
+    margin-left: 30px;
+    color: white;
+}
+
+@media screen and (max-width:1000px) {
+    .movie-container2 {
+        flex-direction: column;
+    }
+
+    .film-poster {
+        margin: 0 auto;
+    }
+}
+
+.btn.btn-primary.btn-lg {
+    background-color: orange;
+    border-color: orange;
+    font-family: 'Shantell Sans';
+    color: black;
+}
+
+.btn.btn-primary.btn-lg:hover {
+    background-color: rgba(255, 166, 0, 0.74);
+    color: rgb(249, 249, 252);
+}
+
+/* button Download next page */
+.btnNextPage {
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    background-color: orange;
+    border-color: orange;
+    font-family: 'Shantell Sans';
+    color: black;
+    border-radius: 20px;
+    border-color: none;
+    margin-bottom: 50px;
+}
+
+.btnNextPage:hover {
+    background-color: rgba(255, 166, 0, 0.74);
+    color: rgb(249, 249, 252);
+}
