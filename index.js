@@ -1,105 +1,172 @@
-const btn = document.getElementById("btn");
-const movieContainer = document.getElementById("movie-container");
-// const btnShowNext = document.getElementById("btnNextPage");
+const btnSearch = document.getElementById("btn-search");
 
-const API = `https://www.omdbapi.com/?apikey=f1b0a872`;
+const _endpoint = "http://api.openweathermap.org/data/2.5/weather?";
 
-const createFilmItem = ({ imdbID, Title, Poster }) => {
-  // if movie doesn`t have a poster, set default poster
-  if (Poster === "N/A") {
-    Poster = "./img/000000h1.jpeg";
-  }
-  return `<div class="film">
-                <p class="film-name">${Title}</p>
-                <img class="film-poster" src="${Poster}" alt="${Title}">
-                <button class="btn-details" data-key="${imdbID}">Details</button>
-            </div>`;
-};
-
-// show info about chosen movie
-const showInfoAboutFilm = ({
-  Title,
-  Poster,
-  imdbRating,
-  Year,
-  Plot,
-  Actors,
+// function for creating weather forecast item from the data, which was got from API
+const createWeatherForecastItem = ({
+  name,
+  sys: { country },
+  main: { temp, feels_like, humidity },
+  wind: { speed },
+  weather: [{ main: clouds }],
 }) => {
-  return `<div class="movie-container2">
-                <img class="film-poster" src="${Poster}" alt="${Title}">
-                <div class="movie-info">
-                    <h3>${Title}</h3>
-                    <p>Raiting: ${imdbRating}</p>
-                    <p>Date of release: ${Year}</p>
-                    <p>${Plot}</p>
-                    <p>Actors: ${Actors}</p>
-                </div>         
-            </div> 
-            `;
+  // creating object for saving and storing in Local Storage
+  let cityWeather = {
+    name,
+    country,
+    temp,
+    feels_like,
+    humidity,
+    speed,
+    clouds,
+  };
+  localStorage.setItem(`${name}`, JSON.stringify(cityWeather));
+  return `<div class='forecast__container'>
+            <div class='forecast__main-info'>   
+                <div class='forecast__city-temp'>
+                    <h2 class='city-name'>${name}, ${country}</h2>
+                    <div class='temp'>${temp} °С</div>
+                </div>
+                <div class="img-weather__container">
+                    <img id="img-weather" class="img-weather" data-weather=${clouds} src="">
+                </div>
+            </div>
+                <div class='widget__container'>
+                    <div class='wind-speed__container'>
+                        <div>${speed} m/s</div> 
+                        <div>Wind speed</div>
+                    </div>
+                    <div class='humidity__container'>
+                        <div>${humidity} %</div> 
+                        <div>Humidity</div> 
+                    </div>
+                    <div class='feels-like__container'>
+                        <div>${feels_like} °С</div>
+                        <div>Feels like</div> 
+                    </div>
+                </div>
+        </div>`;
 };
 
-const showInfoOfChosenFilm = (e) => {
-  const filmId = e.target.dataset.key;
-  fetch(`${API}&i=${filmId}`).then((response) =>
-    response.json().then((movie) => {
-      const chosenFilmContainer = document.getElementById("chosen-film-info");
-      chosenFilmContainer.innerHTML = showInfoAboutFilm(movie);
-      window.scrollTo({
-        top: 180,
-        behavior: "smooth",
+// function for creating weather item from  Local Storage
+const createWeatherItemFromLocalStorage = ({
+  name,
+  country,
+  temp,
+  feels_like,
+  humidity,
+  speed,
+  clouds,
+}) => {
+  return `<div class='forecast__container'>
+                <div class='forecast__main-info'>   
+                    <div class='forecast__city-temp'>
+                        <h2 class='city-name'>${name}, ${country}</h2>
+                        <div class='temp'>${temp} °С</div>
+                    </div>
+                    <div class="img-weather__container">
+                        <img id="img-weather" class="img-weather" data-weather=${clouds} src="">
+                    </div>
+                </div>
+                  <div class='widget__container'>
+                      <div class='wind-speed__container'>
+                          <div>${speed} m/s</div> 
+                          <div>Wind speed</div>
+                      </div>
+                      <div class='humidity__container'>
+                          <div>${humidity} %</div> 
+                          <div>Humidity</div> 
+                      </div>
+                      <div class='feels-like__container'>
+                          <div>${feels_like} °С</div>
+                          <div>Feels like</div> 
+                      </div>
+                  </div>
+          </div>`;
+};
+// create icon for weather forecast
+const createWeatherIcon = () => {
+  let img = document.getElementById("img-weather");
+  switch (img.dataset.weather) {
+    case "Clear":
+      img.src = "./assets/icons/free-icon-sun-6389147.png";
+      img.classList.add('rotation')
+      break;
+
+    case "Rain":
+      img.src = "./assets/icons/free-icon-watering-7265400.png";
+      img.classList.add('rain')
+      break;
+
+    case "Snow":
+      img.src = "./assets/icons/free-icon-snowflake-6409128.png";
+      img.classList.add('rotation')
+      break;
+
+    case "Clouds":
+      img.src = "./assets/icons/free-icon-cloud-1163624.png";
+      img.classList.add('move')
+      break;
+
+    case "Haze":
+    case "Mist":
+      img.src = "./assets/icons/haze.png";
+      img.classList.add('move')
+      break;
+  }
+};
+
+// check if there is a weather forecast in the Local Storage
+const checkLocalStorage = (inputValue) => {
+  let result = false;
+  for (let i of Object.keys(localStorage)) {
+    if (inputValue === i) {
+      result = true;
+    }
+  }
+  return !result;
+};
+
+// delete weather item from local storage // for testing I set timer on 1 min instead of 2 hours
+const deleteItemFromLocalStorage = (item) => {
+  setTimeout(() => {
+    localStorage.removeItem(item);
+  }, 60000);
+};
+
+// getting data from the Weather API
+const findWeatherForecast = () => {
+  let inputValue = document.getElementById("searchInput").value;
+  inputValue = inputValue[0].toUpperCase() + inputValue.slice(1);
+  const containerResult = document.getElementById("container-result");
+
+  if (checkLocalStorage(inputValue)) {
+    fetch(
+      `${_endpoint}q=${inputValue}&units=metric&lang=ua&APPID=6f1f2a9f9f48c0675ae85c9bf37b10f7`
+    )
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response)
+        containerResult.innerHTML = createWeatherForecastItem(response);
+      })
+      .then(() => {
+        createWeatherIcon();
+      })
+      .then(() => {
+        deleteItemFromLocalStorage(inputValue);
+      })
+      .catch((err) => {
+        alert("we didn`t find such city");
+        console.log(err);
       });
-    })
-  );
+  } else {
+    // here we get information from localStorage
+    containerResult.innerHTML = createWeatherItemFromLocalStorage(
+      JSON.parse(localStorage.getItem(inputValue))
+    );
+    createWeatherIcon();
+  }
 };
 
-const createBtnNextPage = () => {
-  const btnNextPage = document.createElement("button");
-  btnNextPage.textContent = "Show next results";
-  btnNextPage.classList.add("btnNextPage");
-  let page = 1;
-  addEventListener("click", () => {
-    getFilmsCollection(++page);
-  });
-  return btnNextPage;
-  // return `<button class="btnNextPage" id="btnNextPage">Show next results</button>`
-};
+btnSearch.addEventListener("click", findWeatherForecast);
 
-// const downloadNextFilms = () => {
-//     let page = 1;
-//     ++page
-//     getFilmsCollection(page)
-// }
-
-// to find and get film from API OMDB
-const getFilmsCollection = (page = 1) => {
-  const input = document.getElementById("name");
-  const select = document.getElementById("type");
-
-  fetch(`${API}&s=${input.value}&type=${select.value}&page=${page}`)
-    .then((response) => response.json())
-    .then((res) => res.Search)
-    .then((arrayOfFilms) => {
-      movieContainer.innerHTML = "";
-      arrayOfFilms.forEach((element) => {
-        console.log(element);
-        movieContainer.innerHTML += createFilmItem(element);
-      });
-
-    //   if (!document.getElementById("btnNextPage")) {
-    //     document.body.append(createBtnNextPage());
-    //   }
-    })
-    .then(() => {
-      const allBtnDetails = movieContainer.querySelectorAll(".btn-details");
-      allBtnDetails.forEach((button) =>
-        button.addEventListener("click", showInfoOfChosenFilm)
-      );
-    })
-    .catch((err) => console.log(err));
-};
-
-btn.addEventListener("click", getFilmsCollection);
-
-// btnShowNext.addEventListener("click", () => {
-//   getFilmsCollection(++page);
-// });

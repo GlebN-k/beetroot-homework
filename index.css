@@ -1,182 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: rgb(39, 37, 37);
-}
-
-.container {
-    /* max-width: 50%; */
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-/* container for results */
-.movie-container {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
+    background-image: url(./assets/icons/wallpaperbetter.com_1920x1080.jpg);
+    background-size: cover;
+    height: 100vh;
 }
 
 .heading {
     text-align: center;
-    letter-spacing: 10px;
-    font-family: 'Shantell Sans';
-    font-size: 34px;
-    font-weight: 900;
-    color: orange;
-    /* rgb(23 185 176); */
-    margin-bottom: 30px;
-    /* height: 48px; */
+    padding-top: 150px;
+    word-spacing: 20px;
+    margin-bottom: 20px;
 }
 
-/* form */
-
-.form {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.inputs-container {
-    display: flex;
-    /* flex-direction: column; */
-    gap: 20px;
-}
-
-input {
+.search-input {
+    display: block;
+    border: 0;
+    border: solid 3px rgb(244, 241, 241);
+    background-color: rgb(143, 139, 146);
+    border-radius: 90px;
+    height: 30px;
     width: 300px;
-    height: 40px;
-    border-radius: 20px;
+    color: rgb(244, 241, 241);
+    margin: 0 auto;
     text-align: center;
-    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-select {
-    border-radius: 20px;
+.btn-search {
+    border: 0;
+    display: block;
     width: 100px;
-    text-align: center;
-}
-
-/* button to send form */
-.btn {
-    display: flex;
+    height: 30px;
     margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.film {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    width: 250px;
-    overflow: hidden;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 20px;
+    border-radius: 30px;
+    background-color: rgb(92, 92, 199);
     color: aqua;
-    font-family: "Rubik";
 }
 
-.film-name {
-    height: 48px;
-    margin: 0px;
+.btn-search:hover {
+
+    background-color: rgb(69, 69, 135);
+    color: aqua;
 }
 
-/*  */
-.info-about-film {
-    color: antiquewhite;
-}
-
-.hidden {
-    display: none;
-}
-
-
-/* film poster */
-.film-poster {
-    width: 250px;
-    height: 350px;
-    display: block;
-}
-
-/* button to show/hide details about the film */
-.btn-details {
-    display: block;
-    width: 100px;
-    height: 40px;
+/* styles for data from WEATHER API */
+.forecast__container {
+    padding-top: 30px;
+    width: 500px;
     margin: 0 auto;
-    margin-top: 20px;
-    border: none;
-    background-color: orange;
-    border-radius: 10px;
-    font-family: 'Shantell Sans';
-    /* color: ; */
-}
-
-.btn-details:hover {
-    background-color: rgb(95, 95, 209);
-    color: gold;
-    /* color: ; */
-}
-
-.chosen-film-info {
-    /* border: 2px solid rgb(233, 9, 9); */
-    color: gold;
-    /* background-color: gray; */
-    text-align: center;
-    max-width: 60%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
-.movie-container2 {
-    display: flex;
-}
-
-.movie-info {
-    margin-top: 30px;
-    margin-left: 30px;
     color: white;
 }
 
-@media screen and (max-width:1000px) {
-    .movie-container2 {
-        flex-direction: column;
-    }
-
-    .film-poster {
-        margin: 0 auto;
-    }
+.forecast__main-info {
+    display: flex;
+    margin-bottom: 30px;
 }
 
-.btn.btn-primary.btn-lg {
-    background-color: orange;
-    border-color: orange;
-    font-family: 'Shantell Sans';
-    color: black;
+.img-weather__container {
+    margin-left: 100px;
+    position: relative;
+    width: 150px;
 }
 
-.btn.btn-primary.btn-lg:hover {
-    background-color: rgba(255, 166, 0, 0.74);
-    color: rgb(249, 249, 252);
+
+.city-name {
+    color: gold;
+    font-size: 30px;
 }
 
-/* button Download next page */
-.btnNextPage {
-    display: block;
-    width: 120px;
-    margin: 0 auto;
-    background-color: orange;
-    border-color: orange;
-    font-family: 'Shantell Sans';
-    color: black;
+.temp {
+    font-size: 60px;
+    color: white;
+    font-weight: bolder;
+}
+
+.widget__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+    background-color: rgb(128, 128, 128, 0.3);
     border-radius: 20px;
-    border-color: none;
-    margin-bottom: 50px;
+    border: 1px solid gray;
+    text-align: center;
+    /* bcg
+    opacity: 0.5; */
+    /* flex-direction: column */
 }
 
-.btnNextPage:hover {
-    background-color: rgba(255, 166, 0, 0.74);
-    color: rgb(249, 249, 252);
+.img-sun {
+    animation: rot 10s infinite;
 }
+
+.img-weather {
+    width: 100px;
+    height: 100px;
+}
+
+.rotation {
+    animation: rot 10s infinite;
+}
+
+.horizontal {
+    animation: slide 10s infinite;
+    /* animation-duration: 3s;
+    animation-name: slidein; */
+}
+
+.move {
+    position: absolute;
+    left: 0;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+
+    /* Початкове положення елемента */
+    50% {
+        left: calc(100% - 50px);
+    }
+
+    /* Положення елемента в кінці "першої половини" анімації */
+    100% {
+        left: 0;
+    }
+
+    /* Початкове положення елемента */
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    /* Початкове положення елемента */
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+    animation-name: rain;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rain {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(100% - 20px);
+    }
+}
+
+
+@keyframes slide {
+    from {
+        transform: translate(150px, 0);
+    }
+
+    to {
+        transform: translate(0px, 0);
+        /* transform: translate(350px, 0); */
+    }
+
+    /* from {
+        margin-left: 100%;
+        width: 100%
+      }
+    
+      to {
+       margin-left: 0%;
+       width: 100%;
+     } */
+}
+
+/* @keyframes sun {
+    from {top: 0px;}
+    50% {top: 100px !important;} /* ignored */
+/* to {top: 200px;}
+  }  */
+
+/* .wind-speed__container{
+    display: flex;
+} */
