@@ -1,0 +1,81 @@
+.our-partner-container {
+  background: #f8f1ea;
+  position: relative;
+}
+.our-partner__header {
+  padding-top: 70px;
+  padding-bottom: 40px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.swiper3 {
+  max-width: 1186px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+.swiper3-button-prev {
+  position: absolute;
+  top: 125px;
+  left: 50px;
+  z-index: 100;
+
+  :hover {
+    cursor: url(../assets/images/cursor-slider2.svg), pointer;
+  }
+}
+
+.swiper3-button-next {
+  position: absolute;
+  top: 125px;
+  right: 50px;
+
+  :hover {
+    cursor: url(../assets/images/cursor-slider2.svg), pointer;
+  }
+}
+
+// pagination in section "OUR PARTNERS"
+.swiper3-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  color: #f16a50;
+  max-width: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    width: 400px;
+  }
+
+  .swiper-pagination-bullet {
+    color: #f16a50;
+    background-color: #f16a50;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper3-button-prev {
+    display: none;
+  }
+
+  .swiper3-button-next {
+    display: none;
+  }
+}
+
+.swiper3 .swiper-wrapper {
+  margin: 0 auto;
+}
+
+.swiper3 .swiper-wrapper {
+  margin: 0 auto;
+  width: 700px;
+}

@@ -1,172 +1,116 @@
-const btnSearch = document.getElementById("btn-search");
+// swiper1 MAIN SECTION with photoes
+const swiper1 = new Swiper(".swiper1", {
+  // Optional parameters
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
 
-const _endpoint = "http://api.openweathermap.org/data/2.5/weather?";
+  //pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
-// function for creating weather forecast item from the data, which was got from API
-const createWeatherForecastItem = ({
-  name,
-  sys: { country },
-  main: { temp, feels_like, humidity },
-  wind: { speed },
-  weather: [{ main: clouds }],
-}) => {
-  // creating object for saving and storing in Local Storage
-  let cityWeather = {
-    name,
-    country,
-    temp,
-    feels_like,
-    humidity,
-    speed,
-    clouds,
-  };
-  localStorage.setItem(`${name}`, JSON.stringify(cityWeather));
-  return `<div class='forecast__container'>
-            <div class='forecast__main-info'>   
-                <div class='forecast__city-temp'>
-                    <h2 class='city-name'>${name}, ${country}</h2>
-                    <div class='temp'>${temp} °С</div>
-                </div>
-                <div class="img-weather__container">
-                    <img id="img-weather" class="img-weather" data-weather=${clouds} src="">
-                </div>
-            </div>
-                <div class='widget__container'>
-                    <div class='wind-speed__container'>
-                        <div>${speed} m/s</div> 
-                        <div>Wind speed</div>
-                    </div>
-                    <div class='humidity__container'>
-                        <div>${humidity} %</div> 
-                        <div>Humidity</div> 
-                    </div>
-                    <div class='feels-like__container'>
-                        <div>${feels_like} °С</div>
-                        <div>Feels like</div> 
-                    </div>
-                </div>
-        </div>`;
-};
+// swiper2 - NEW ARRIVALS
+const swiper2 = new Swiper(".swiper2", {
+  // slidesPerView: 1,
+  loop: true,
 
-// function for creating weather item from  Local Storage
-const createWeatherItemFromLocalStorage = ({
-  name,
-  country,
-  temp,
-  feels_like,
-  humidity,
-  speed,
-  clouds,
-}) => {
-  return `<div class='forecast__container'>
-                <div class='forecast__main-info'>   
-                    <div class='forecast__city-temp'>
-                        <h2 class='city-name'>${name}, ${country}</h2>
-                        <div class='temp'>${temp} °С</div>
-                    </div>
-                    <div class="img-weather__container">
-                        <img id="img-weather" class="img-weather" data-weather=${clouds} src="">
-                    </div>
-                </div>
-                  <div class='widget__container'>
-                      <div class='wind-speed__container'>
-                          <div>${speed} m/s</div> 
-                          <div>Wind speed</div>
-                      </div>
-                      <div class='humidity__container'>
-                          <div>${humidity} %</div> 
-                          <div>Humidity</div> 
-                      </div>
-                      <div class='feels-like__container'>
-                          <div>${feels_like} °С</div>
-                          <div>Feels like</div> 
-                      </div>
-                  </div>
-          </div>`;
-};
-// create icon for weather forecast
-const createWeatherIcon = () => {
-  let img = document.getElementById("img-weather");
-  switch (img.dataset.weather) {
-    case "Clear":
-      img.src = "./assets/icons/free-icon-sun-6389147.png";
-      img.classList.add('rotation')
-      break;
+  spaceBetween: 10,
 
-    case "Rain":
-      img.src = "./assets/icons/free-icon-watering-7265400.png";
-      img.classList.add('rain')
-      break;
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper2-button-next",
+    prevEl: ".swiper2-button-prev",
+  },
 
-    case "Snow":
-      img.src = "./assets/icons/free-icon-snowflake-6409128.png";
-      img.classList.add('rotation')
-      break;
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
 
-    case "Clouds":
-      img.src = "./assets/icons/free-icon-cloud-1163624.png";
-      img.classList.add('move')
-      break;
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
 
-    case "Haze":
-    case "Mist":
-      img.src = "./assets/icons/haze.png";
-      img.classList.add('move')
-      break;
-  }
-};
+    950: {
+      slidesPerView: 4,
+      spaceBetween: 0,
+    },
 
-// check if there is a weather forecast in the Local Storage
-const checkLocalStorage = (inputValue) => {
-  let result = false;
-  for (let i of Object.keys(localStorage)) {
-    if (inputValue === i) {
-      result = true;
-    }
-  }
-  return !result;
-};
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 10,
+    },
+  },
+});
 
-// delete weather item from local storage // for testing I set timer on 1 min instead of 2 hours
-const deleteItemFromLocalStorage = (item) => {
-  setTimeout(() => {
-    localStorage.removeItem(item);
-  }, 60000);
-};
+// slider for the block "OUR PARTNERS"
+const swiper = new Swiper(".swiper3", {
+  // Optional parameters
+  loop: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
 
-// getting data from the Weather API
-const findWeatherForecast = () => {
-  let inputValue = document.getElementById("searchInput").value;
-  inputValue = inputValue[0].toUpperCase() + inputValue.slice(1);
-  const containerResult = document.getElementById("container-result");
+    600: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
 
-  if (checkLocalStorage(inputValue)) {
-    fetch(
-      `${_endpoint}q=${inputValue}&units=metric&lang=ua&APPID=6f1f2a9f9f48c0675ae85c9bf37b10f7`
-    )
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response)
-        containerResult.innerHTML = createWeatherForecastItem(response);
-      })
-      .then(() => {
-        createWeatherIcon();
-      })
-      .then(() => {
-        deleteItemFromLocalStorage(inputValue);
-      })
-      .catch((err) => {
-        alert("we didn`t find such city");
-        console.log(err);
-      });
+    800: {
+      slidesPerView: 6,
+      spaceBetween: 10,
+    },
+
+    1100: {
+      slidesPerView: 8,
+      spaceBetween: 10,
+    },
+
+    1300: {
+      slidesPerView: 9,
+      spaceBetween: 20,
+    },
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper3-button-next",
+    prevEl: ".swiper3-button-prev",
+  },
+  pagination: {
+    el: ".swiper3-pagination",
+    // type: 'bullets',
+    clickable: true,
+  },
+});
+
+const burgerMenu = document.getElementById("icon");
+
+const openBurgerMenu = (e) => {
+  let x = document.getElementById("navbar");
+  if (x.style.display === "block") {
+    x.style.display = "none";
   } else {
-    // here we get information from localStorage
-    containerResult.innerHTML = createWeatherItemFromLocalStorage(
-      JSON.parse(localStorage.getItem(inputValue))
-    );
-    createWeatherIcon();
+    x.style.display = "block";
+  }
+  e.stopImmediatePropagation();
+};
+
+const handleClick = () => {
+  let x = document.getElementById("navbar");
+  if (x.style.display === "block") {
+    x.style.display = "none";
   }
 };
 
-btnSearch.addEventListener("click", findWeatherForecast);
+burgerMenu.addEventListener("click", openBurgerMenu);
 
+document.addEventListener("click", handleClick);
